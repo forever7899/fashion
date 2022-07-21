@@ -1,0 +1,537 @@
+@import "./../../scss/common";
+@import './../../scss/component';
+@import './mixin-nav_menu';
+@import "./../../scss/mixin";
+
+aside {
+    @include nav_menu();
+}
+
+.content1 {
+    background-color: $blue;
+
+    .max {
+        padding-left: 400px;
+        display: flex;
+        gap: 6%;
+
+        @include tablet {
+            padding-left: 40px;
+            align-items: flex-end;
+        }
+
+        @include mobile {
+            flex-direction: column-reverse;
+            align-items: center;
+            gap: 4%;
+            padding-left: unset;
+        }
+
+        .txt_box {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            width: 26%;
+            min-width: 350px;
+
+            .circle {
+                display: flex;
+                justify-content: end;
+                gap: 20px;
+
+                span {
+                    width: 68px;
+                    height: 68px;
+                    flex-basis: 68px;
+                    margin-bottom: 5vh;
+                }
+
+                .brand_circle{
+                    animation: rotate_right 3s linear infinite;
+                    transform-origin: center;
+                }
+
+                .no {
+                    border-radius: 50%;
+                    background-color: $yellow;
+                    text-align: center;
+                    line-height: 68px;
+
+                    animation: rotate_left 3s linear infinite;
+                    transform-origin: center;
+                }
+            }
+
+            .retro_hoops {
+                img {                
+                    width: 100%;
+                    object-fit: contain;}
+            }
+
+            p {
+                height: 30vh;
+                border-left: 1px solid #000;
+                text-align: left;
+                font-size: 1.2rem;
+                font-weight: 500;
+                padding: 40px;
+                margin-top: 4vh;
+            }
+
+            .arr_bottom {
+                position: absolute;
+                right: 0;
+                bottom: 10vh;
+            }
+
+            @include tablet {
+                width: 50%;
+                height: 54%;
+                min-width: unset;
+            }
+
+            @include mobile {
+                width: 80%;
+                height: 40%;
+                min-width: unset;
+
+                .circle {
+                    gap: 10px;
+                    span {
+                        display: inline-block;
+                        width: 50px;
+                        height: 50px;
+                        flex-basis: 50px;
+                        margin-bottom: -10vh;
+                        font-size: 0.8rem;
+                    }
+                }
+
+                .retro_hoops {
+                    img {                
+                        width: 70%;
+                        object-fit: contain;}
+                }
+
+                p{
+                    margin-top: unset;
+                    padding: 5px 30px 0 10px;
+                    font-size: 1rem;
+                }
+
+                .arr_bottom {
+                    position: absolute;
+                    right: 0;
+                    bottom: 5vh;
+                }
+            }
+
+        }
+
+        .img_box{
+            img {
+                width: 100%;
+                max-height: 100%;
+                object-fit: cover;
+            }
+
+            @include tablet {
+                width: 80%;
+                height: 80%;
+                margin-bottom: 15%;
+                border: #000 10px solid;
+            }
+
+            @include mobile {
+                width: 80%;
+                height: 48%;
+                margin: unset;
+                img {
+                    object-position: center 68%;
+                }
+            }
+        }
+    }
+}
+
+.content2 {
+    background-color: $yellow;
+
+    .max {
+        padding-left: 400px;
+        display: flex;
+        align-items: center;
+        gap: 6vw;
+
+        @include tablet {
+            padding-left: 40px;
+        }
+        @include mobile {
+            padding-left: unset;
+        }
+
+        .txt_box{
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 26vw;
+            height: 100%;
+            padding-left: 4vw;
+            border-left: 1px solid #000;
+            z-index: 1;
+            span {
+                font-size: 1.2em;
+                font-weight: 600;
+            }
+
+            h2 {
+                font-size: 10em;
+                font-weight: 700;
+                text-shadow: 2px 2px 3px $red ;
+            }
+
+            .arrow{
+                width: 5vw;
+                img {
+                    object-fit: contain;
+                }
+                
+            }
+            @include tablet {
+                h2 {
+                    font-size: 8rem;
+                    text-shadow: 1px 1px 1px $red ;
+                }
+
+                .arrow{
+                    width: 28vw;
+                    padding: 60px 20px;
+
+                    img {
+                        object-fit: contain;
+                    }
+                    
+                }
+
+            }
+
+            @include mobile {
+                width: 30%;
+                margin: auto;
+                border: unset;
+                padding-left: 20px;
+
+                span {
+                    padding: 10px;
+                }
+                
+                h2 {
+                    font-size: 5rem;
+                    text-shadow: 1px 1px 1px $red ;
+                }
+
+                .arrow{
+                    width: 36vw;
+                    padding: 20px;
+
+                    img {
+                        object-fit: contain;
+                    }
+                    
+                }
+            }
+        }
+
+        .img_box {
+            display: flex;
+            align-items: center;
+            width: 16vw;
+            height: 90vh;
+
+            img {
+                object-fit: contain;
+                max-height: 90vh;
+            }
+
+            @include tablet {
+                width: 70%;
+            }
+        }
+
+    }
+}
+
+.content3 {
+    background-color: #000;
+
+    .max {
+        @keyframes band {
+            from{left: 0;}
+            to{left: -600px;}
+        }
+    
+        .band {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: calc(100vw + 600px);
+            height: 54px;
+            background: url(./../images/nb/band_nb.png) repeat-x;
+            animation: band 5s linear infinite;
+        }
+    
+        .model_circle {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 70vh;
+            height: 70vh;
+
+            @include tablet {
+                width: 80%;
+                transform: translate(-50%,-30%);
+            }
+    
+            div {
+                position: absolute;
+                right: 0;
+    
+                @keyframes change {
+                    0% {opacity: 0}
+                    50% {opacity: 1 }
+                    100% {opacity: 0 }
+                }
+    
+                &:last-child {
+                    animation: change 1s infinite alternate steps(1);
+                }
+            }
+        }
+        
+        .logo {
+            position: absolute;
+            right: 50%;
+            top: 10vw;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            text-align: center;
+            z-index: 2;
+    
+            background: url(./../images/nb/logo_red.svg) no-repeat center /contain;
+            background-color: #e1ecf2;
+            // animation: rotate_left 10s linear infinite;
+            // transform-origin: center;
+
+            @include tablet {
+                left: 10%;
+                top: 25%;
+            }
+
+            @include mobile {
+                width: 50px;
+                height: 50px;
+            }
+        }
+    
+    }
+}
+
+.content4 {
+    background: url(./../images/nb/shadow_bg.jpg) no-repeat center /cover;
+
+    .max {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 4vw;
+        
+        .logo-img {
+            @include tablet {
+                position: absolute;
+                bottom: 20%;
+                z-index: 2;
+            }
+
+            @include mobile {
+                width: 40%;
+            }
+        }
+
+        .change {
+            position: relative;
+            width: 30%;
+            height: 70vh;
+            border: 1px solid #000;
+            // overflow: hidden;
+
+            @include tablet {
+                width: 80%;
+            }
+
+
+            a {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+    
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                &:last-child {
+                    animation: change 1.6s infinite alternate steps(1);
+                    img {
+                        object-position: 30% center;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.content5 {
+    position: relative;
+    div {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top:0;
+        z-index: -1;
+        background: url(./../images/nb/fixed_bg.jpg) no-repeat  center -20vh /cover;
+
+        @include tablet {
+            background-position: center;
+        }
+    }
+}
+
+.content6 {
+    background-color: $blue;
+
+    .max {
+        ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 50vw;
+            height: 80vh;
+            margin: auto;
+
+            @include tablet {
+                width: 70%;
+            }
+
+            li {
+                width: 24vw;
+
+                img {
+                    object-fit: cover;
+                }
+
+                @include tablet {
+                    width: 48%;
+                }
+            }
+        }
+
+        .txt {
+            width: 50vw;
+            margin: auto;
+            color: #fff;
+            font-size: 2em;
+
+            @include tablet {
+                width: 70%;
+            }
+        }
+    }
+}
+
+.content7 {
+    background-color: $yellow;
+
+    .max {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 20vw;
+
+        @include tablet{
+            padding: 30% 0;
+        }
+
+        @include mobile {
+        }
+
+
+        .txt_box {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+            height: 100%;
+            padding: 10vh;
+            text-align: right;
+            // background-color: chartreuse;
+
+            h4{
+                text-shadow: 1px 1px 2px $red ;
+            }
+            
+            img {
+                width: 150px;
+                object-fit: contain;
+                filter: brightness(0);
+            }
+
+            @include tablet{
+                width: 33%;
+                padding: 0;
+
+                h4 {
+                    font-size: 3rem;
+                }
+            }
+
+            @include mobile {
+                position: absolute;
+                align-items: center;
+                width: 100%;
+                height: 82%;
+                // background-color: blueviolet;
+
+                h4 {
+                    font-size: 2rem;
+                    text-align: center;
+                }
+
+                img {
+                    width: 80%;
+                }
+            }
+            
+        }
+
+        .img_box{
+            width: 50%;
+            img {
+                object-fit: cover;
+            }
+
+            @include tablet{
+                width: 60%;
+                // background-color: aqua;
+            }
+
+            @include mobile {
+                width: 90vw;
+            }
+        }
+    }
+}

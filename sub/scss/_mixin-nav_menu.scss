@@ -1,0 +1,127 @@
+@import './../../scss/mixin';
+
+@mixin nav_menu() {
+    nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: fixed;
+        top: 0px;
+        height: 100vh;
+        font-size: 0.9rem;
+        padding: 40px;
+        z-index: 2;
+        color: #fff;
+        transition: 0.3s;
+
+        @include tablet {
+            width: 100%;
+            padding: 20px 40px;
+        }
+
+        &:hover {
+            background-color: rgba(29, 29, 29, 0.9);
+            @include tablet {
+                background-color: unset;
+            }
+        }
+    
+        // @include mobile {
+        //     display: none;
+        // }
+
+        a {
+            font-weight: 500;
+            color: #fff;
+            line-height: 2rem;
+            white-space: nowrap ;
+        }
+
+        .header {
+            .home {
+                span {
+                    width: 7px;
+                    margin-right: 10px;
+
+                    img {
+                        width: 100%;
+                        transform: rotate(180deg);
+                    }
+                }
+            }
+            @include tablet {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+
+                .home {
+                    text-align: right;
+                }
+            }
+        }
+
+        .gnb {
+            ul {
+                margin-top: 10px;
+
+                li {
+                    a {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 100px;
+                        font-size: 0.8rem;
+                        font-weight: 300;
+                        border-top: rgba(255, 255, 255, 0.2) 1px solid;
+                        border-bottom: rgba(255, 255, 255, 0.2) 1px solid;
+                        text-align: center;
+                        padding :0 5%;
+                        opacity: 0.5;
+        
+                        &:hover {
+                            opacity: 1;
+                        }
+
+                        span {
+                            width: 20px;
+                            height: 20px;
+                            padding-left: 10px;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                        }
+
+                        .bb{
+                            background-image: url(./../../images/white_logo/bb.svg)
+                        }; 
+                        .ep{
+                            background-image: url(./../../images/white_logo/ep.svg)
+                        }; 
+                        .wi{
+                            background-image: url(./../../images/white_logo/wi.svg)
+                        }; 
+                        .nb{
+                            background-image: url(./../../images/white_logo/nb.svg)
+                        }; 
+                    }
+
+                    .selected {
+                        opacity: 1;
+                    }
+                }
+            }
+
+            @include tablet {
+                display: none;
+            }
+
+        } //.gnb
+
+        .musinsa {
+            @include tablet {
+                display: none;
+            }
+        }
+    }
+}

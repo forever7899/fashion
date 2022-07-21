@@ -1,0 +1,144 @@
+@import "./_mixin.scss";
+@import "./common";
+
+
+.wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4vh;
+    // overflow: hidden;
+    background-color: #ff5900;
+
+
+    #bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+
+        video {
+            position: absolute;
+            top: 0px;
+            left: 50%;
+            transform: translateX(-50%);
+            min-width: 100vw;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            opacity: 0.3;
+        }
+
+        div{
+            position: absolute;
+            opacity: 0;
+
+        }
+
+        .bg_bb{@include full-bg (bb, center top)}; 
+        .bg_ep{@include full-bg (ep, center top)}; 
+        .bg_wi{@include full-bg (wi, right top)};
+        .bg_nb{@include full-bg (nb, center top)}; 
+        
+    }
+
+    .int {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+
+        .topic {
+            display: flex;
+            gap: 0.5em;
+            color:#fff;
+
+            @include mobile {
+                flex-direction: column;
+                align-items: center;
+            }
+    
+            span {
+                padding: 2px 10px;
+
+                &:last-child {
+                    background-color: #000;
+                }
+            }
+        }
+    
+        article {
+            width:40vw;
+            z-index: 2;
+
+            @include tablet {
+                width: 80vw;
+            }
+
+            @include mobile {
+                width: 70vw;
+            }
+    
+            h2 {
+                // color: #fff;
+                text-align: center;
+                margin-bottom: 3vh;
+                mix-blend-mode: difference;
+
+                @include mobile {
+                    font-size: 20vw;
+                }
+            }
+    
+            #circle_menu{
+                display: flex;
+                justify-content: space-between;
+                width:70%;
+                margin: auto;
+                z-index: 1;
+
+                @include mobile {
+                    width: 100%;
+                }
+        
+                a {
+                    z-index: 1000;
+                    width: 18%;
+                    padding-bottom: 18%;
+                    border: 1px solid #fff;
+                    border-radius: 50%;
+            
+                    span {
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        display: block;
+                        width: 100vw;
+                        height: 100vh;
+                    }
+                }
+                
+
+                .bb { @include logo-bg (bb, center) }
+                .ep { @include logo-bg (ep, center) }
+                .wi { @include logo-bg (wi, center) }
+                .nb { @include logo-bg (nb, center) }
+            }
+        }
+
+        #brand-name {
+            color: #fff;
+            font-weight: 600;
+            
+            span {
+                font-weight: 200;
+            }
+        }
+    }
+}

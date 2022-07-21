@@ -1,0 +1,238 @@
+@import "./../../scss/common";
+@import './../../scss/component';
+@import "./../../scss/mixin";
+@import './mixin-nav_menu';
+
+aside {
+    @include nav_menu();
+}
+
+.content1 {
+    background:url(./../images/bb/bb01_bg.jpg) no-repeat center /cover;
+
+    .max {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: url(./../images/bb/bb01.jpg)no-repeat center /cover;
+
+        .insert {
+            width: 34%;
+            color: #fff;
+            img {
+                width: 12vw;
+                padding: 2vh 0;
+            }
+        }
+
+        @include tablet {
+            .insert {
+                width: 60%;
+                padding-top: 70%;
+                img {
+                    width: 60%;
+                    padding: 2vh 0;
+                }
+            }
+        }
+    }
+
+
+}
+
+.content2 {
+    background:url(./../images/bb/bb02_bg.jpg) no-repeat center /cover;
+
+    .max {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        background: url(./../images/bb/bb02.jpg)no-repeat center /cover;
+    }
+}
+
+.content3 {
+    background:url(./../images/bb/bb03_bg.jpg) no-repeat center /cover;
+
+    .max {
+        background: url(./../images/bb/bb03.jpg)no-repeat center /cover;
+
+        img {
+            position: absolute;
+            left: 270px;
+            top: 10vh;
+            width: 400px;
+            opacity: 0.2;
+            object-fit: contain;
+        }
+    }
+
+    @keyframes band {
+        from{left: 0;}
+        to{left: -400px;}
+    }
+
+    .band {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: calc(100vw + 400px);
+        height: 54px;
+        background: url(./../images/bb/band_bb.png) repeat-x;
+        animation: band 4s linear infinite;
+        z-index: 1;
+    }
+}
+
+.content4 {
+    background:url(./../images/bb/bb04_bg.jpg) no-repeat center /cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.content5 {
+    background-color: #000;
+
+    .max {
+
+        @include tablet {
+            transform: translateY(-10%);
+        }
+
+        .party {
+            position: absolute;
+            width: 200%;
+            height: 50vh;
+        }
+
+        @keyframes party_left {
+            to { left: -100%;}
+        }
+
+        @keyframes party_right {
+            to { right: -100%;}
+        }
+
+        #party_top {
+            position: absolute;
+            width: 200%;
+            top: 0;
+            left: 0%;
+            background: url(./../images/bb/bb05_top.jpg) repeat-x left bottom / 50% ;
+        }
+        #party_bottom {
+            position: absolute;
+            width: 200%;
+            bottom: 0;
+            right: 0%;
+            background: url(./../images/bb/bb05_bottom.jpg) repeat-x right top / 50%;
+        }
+
+        .move_ver {
+            position: absolute;
+            left: 20%;
+            bottom: 5%;
+            width: 34%;
+            color: #fff;
+
+            img {
+                width: 12vw;
+                padding: 2vh 0;
+            }
+
+            p {
+                white-space: pre-line;
+            }
+
+            @include tablet {
+                left: 10%;
+                bottom: 5%;
+                width: 80%;
+
+                img {
+                    width: 40%;
+                    padding: 2vh 0;
+                }
+    
+                p {
+                    white-space: normal;
+                }
+            }
+        }
+    }
+}
+
+.content6 {
+    background-color: #000;
+
+    .max {
+        padding-left: 20vw;
+
+        .gallery {
+            display: flex;
+            gap: 1vw;
+            height: 80vh;
+
+            li {
+                width: 26vw;
+                height: 100%;
+                overflow: hidden;
+
+                img {
+                    object-position: 30%;
+                }
+            }
+        }
+    }
+}
+
+.content7 {
+    background:url(./../images/bb/bb04_bg.jpg) no-repeat center /cover;
+    .max {
+        background: url(./../images/bb/bb07.jpg) no-repeat center top /cover;
+
+        .event_box{
+            position: absolute;
+            left: 50%;
+            bottom: 4vh;
+            transform: translateX(-50%);
+            width: 29%;
+            padding: 4vh;
+            color: #fff;
+            border: 1px solid #fff;
+            background-color: rgba(255, 200, 0, 0.5);
+
+            h6 {
+                padding-bottom: 2rem;
+            }
+
+            p {
+                white-space: pre-line;
+                text-align: justify;
+            }
+
+            @include tablet {
+                width: 60%;
+                bottom: 4vh;
+            }
+
+            @include mobile {
+                width: 80%;
+                bottom: 4vh;
+
+                h4 {
+                    font-size: 2rem;
+                }
+
+                p {
+                    white-space: normal;
+                }
+            }
+
+        }
+
+    }
+}
